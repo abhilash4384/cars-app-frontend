@@ -8,6 +8,15 @@ const BaseStyle = createGlobalStyle`
 
 html {
   scroll-behavior: smooth;
+  background-color: ${({ theme }) => theme.backgroundColor};
+}
+
+::-webkit-scrollbar{
+	width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #000000
 }
 
 * {
@@ -18,6 +27,10 @@ html {
 	color: ${({ theme }) => theme.textColor}
 }
 
+main .nav-solid {
+	padding: 5px 30px;
+	opacity: 1;
+}
 `;
 
 export default BaseStyle;

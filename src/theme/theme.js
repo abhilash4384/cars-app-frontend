@@ -1,6 +1,7 @@
 export const LIGHT_THEME = {
 	cardBg: '#f0f3e8',
 	textColor: '#001d35',
+	backgroundColor: '#fefcf6',
 
 	btnBg: '#f0f3e8',
 	btnTextColor: '#5a5a5a',
@@ -11,6 +12,7 @@ export const LIGHT_THEME = {
 export const DARK_THEME = {
 	cardBg: '#232820',
 	textColor: '#e3e3dc',
+	backgroundColor: '#1b1c18',
 
 	btnBg: '#232820',
 	btnTextColor: '#c4c8bb',

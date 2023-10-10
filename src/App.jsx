@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import {
 	FlexCenterSection,
@@ -17,8 +17,9 @@ import HERO_VIDEO from './assets/lambo.mp4';
 import LIGHT_MODE from './assets/light-mode.svg';
 import LOGO from './assets/logo.webp';
 import PROFILE from './assets/profile.svg';
-import { DARK_THEME } from './theme/theme';
+import { LIGHT_THEME } from './theme/theme';
 
+import intersectionObserver from './animation/intersection-observer-animation';
 import AMAZE from './assets/cars/amaze.jpg';
 import AURA from './assets/cars/aura.webp';
 import BOLERO from './assets/cars/bolero.webp';
@@ -33,15 +34,20 @@ import SLAVIA from './assets/cars/slavia.webp';
 import SWIFT from './assets/cars/swift.jpg';
 import VERNA from './assets/cars/verna.webp';
 import VIRTUS from './assets/cars/virtus.jpg';
-
 import BaseStyle from './index.style';
 
 function App() {
 	const [theme, setTheme] = useState('LIGHT');
+	const heroRef = useRef('');
+	useEffect(() => {
+		if (heroRef.current) {
+			intersectionObserver.observe(heroRef.current);
+		}
+	}, []);
 	return (
-		<ThemeProvider theme={DARK_THEME}>
+		<ThemeProvider theme={LIGHT_THEME}>
 			<main>
-				<Navbar>
+				<Navbar id="navbar">
 					<div>
 						<Logo src={LOGO} alt="logo" />
 					</div>
@@ -56,7 +62,7 @@ function App() {
 						<HeadeIcon src={DARK_MODE} alt="Dark Mode" />
 					</div>
 				</Navbar>
-				<HeroSection>
+				<HeroSection ref={heroRef}>
 					<HeroVideo loop={true} autoPlay={true} muted>
 						<source src={HERO_VIDEO} type="video/mp4" />
 						Your browser does not support the video tag.

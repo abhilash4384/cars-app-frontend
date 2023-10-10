@@ -6,10 +6,11 @@ export const Navbar = styled.nav`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 10px 40px;
 	background: ${({ theme }) => theme.cardBg};
 	z-index: 2;
-	opacity: 0.8;
+	padding: 15px 40px;
+	opacity: 0.7;
+	transition: all 1s ease-in-out;
 `;
 
 export const Logo = styled.img`
@@ -53,6 +54,12 @@ export const GridCarsSection = styled.section`
 	grid-gap: 20px;
 	justify-items: center;
 	align-items: center;
+
+	@media (max-width: 600px) {
+		grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+		grid-gap: 10px;
+		margin: 0px;
+	}
 `;
 
 export const GridCarsItem = styled.div`
