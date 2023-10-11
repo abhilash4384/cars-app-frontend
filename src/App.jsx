@@ -11,10 +11,10 @@ import {
 	HeroVideo,
 	Logo,
 	Navbar,
+	StickyButton,
 } from './app.style';
 import DARK_MODE from './assets/dark-mode.svg';
 import HERO_VIDEO from './assets/lambo.mp4';
-import LIGHT_MODE from './assets/light-mode.svg';
 import LOGO from './assets/logo.webp';
 import PROFILE from './assets/profile.svg';
 import { LIGHT_THEME } from './theme/theme';
@@ -58,10 +58,12 @@ function App() {
 
 					<div>
 						<HeadeIcon src={PROFILE} alt="Profile" />
-						<HeadeIcon src={LIGHT_MODE} alt="Light Mode" />
-						<HeadeIcon src={DARK_MODE} alt="Dark Mode" />
 					</div>
 				</Navbar>
+				<StickyButton>
+					{/* <HeadeIcon src={LIGHT_MODE} alt="Light Mode" /> */}
+					<HeadeIcon src={DARK_MODE} alt="Dark Mode" className="toggle-icon" />
+				</StickyButton>
 				<HeroSection ref={heroRef}>
 					<HeroVideo loop={true} autoPlay={true} muted>
 						<source src={HERO_VIDEO} type="video/mp4" />

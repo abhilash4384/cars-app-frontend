@@ -8,14 +8,14 @@ export const Navbar = styled.nav`
 	justify-content: space-between;
 	background: ${({ theme }) => theme.cardBg};
 	z-index: 2;
-	padding: 15px 40px;
+	padding: 10px;
 	opacity: 0.7;
 	transition: all 1s ease-in-out;
 `;
 
 export const Logo = styled.img`
-	height: 72px;
-	width: 70px;
+	height: 55px;
+	width: 55px;
 	&:hover {
 		cursor: pointer;
 	}
@@ -80,4 +80,14 @@ export const GridImg = styled.img`
 export const GridItemText = styled.p`
 	text-align: center;
 	padding: 5px;
+`;
+
+export const StickyButton = styled.button`
+	position: fixed;
+	bottom: 5px;
+	right: 2px;
+	padding: none;
+	margin: none;
+	border-style: none;
+	background: transparent;
 `;

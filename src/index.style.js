@@ -7,7 +7,6 @@ const BaseStyle = createGlobalStyle`
 }
 
 html {
-  scroll-behavior: smooth;
   background-color: ${({ theme }) => theme.backgroundColor};
 }
 
@@ -28,7 +27,7 @@ html {
 }
 
 main .nav-solid {
-	padding: 5px 30px;
+	padding: 5px;
 	opacity: 1;
 }
 `;
